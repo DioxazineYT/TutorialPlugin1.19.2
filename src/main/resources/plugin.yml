@@ -3,3 +3,9 @@ version: '${project.version}'
 main: me.wordsdontmakesense.tutorialplugin.TutorialPlugin
 api-version: 1.19
 authors: [ WordsDontMakeSense ]
+commands:
+  nearestplayer:
+    aliases:
+      - np
+    usage: /nearestplayer
+    permission: tutorialplugin.np

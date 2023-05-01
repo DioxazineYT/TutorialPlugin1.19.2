@@ -11,6 +11,9 @@ public final class TutorialPlugin extends JavaPlugin {
         // Plugin startup logic
         getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "Tutorial Plugin" + ChatColor.WHITE + ": " + ChatColor.GREEN + "Enabled!");
         //getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[TutorialPlugin]: Enabled!");
+
+        // Commands
+        getCommand("nearestplayer").setExecutor(new NearestCommand());
     }
 
     @Override
