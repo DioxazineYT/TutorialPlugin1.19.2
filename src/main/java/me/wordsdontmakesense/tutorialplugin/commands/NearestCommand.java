@@ -16,6 +16,11 @@ public class NearestCommand implements CommandExecutor {
             // https://bukkit.org/threads/get-the-nearest-player.142143/ @lenis0012
             Player nearestPlayer = null;
             double farthestDistance = Double.MAX_VALUE;
+
+            if(args.length == 1 && Bukkit.getPlayer(args[0]) != null)
+            {
+                player = Bukkit.getPlayer(args[0]);
+            }
             for (Player p : player.getWorld().getPlayers()) {
                 if (player == p)
                     continue;
@@ -28,10 +33,19 @@ public class NearestCommand implements CommandExecutor {
             }
 
             if (nearestPlayer != null && player.getWorld().getPlayers().size() > 1) {
-                sender.sendMessage("The nearest player to you is " + nearestPlayer.getName() + "! They are " + Math.round(farthestDistance) + " blocks away from you!");
+                if(Bukkit.getPlayer(sender.getName()) != player)
+                {
+                    sender.sendMessage("The nearest player to " + ChatColor.GOLD + player.getName() + ChatColor.WHITE + " is " + ChatColor.GOLD + nearestPlayer.getName() + ChatColor.WHITE + "! They are " + ChatColor.GOLD + Math.round(farthestDistance) + ChatColor.WHITE + " blocks away from " + ChatColor.GOLD + player.getName() + ChatColor.WHITE + "!");
+                } else
+                    sender.sendMessage("The nearest player to you is " + ChatColor.GOLD + nearestPlayer.getName() + ChatColor.WHITE + "! They are " + ChatColor.GOLD + Math.round(farthestDistance) + ChatColor.WHITE + " blocks away from you!");
             } else {
-                sender.sendMessage(ChatColor.RED + "You are alone in this world!");
+                if(Bukkit.getPlayer(sender.getName()) == player)
+                    sender.sendMessage(ChatColor.RED + "You are alone in this world!");
+                else
+                    sender.sendMessage(ChatColor.GOLD + player.getName() + ChatColor.RED + " is alone in this world!");
             }
+        } else {
+            sender.sendMessage(ChatColor.RED + "Incorrect Syntax! Only players can use this command!");
         }
         return true;
     }
