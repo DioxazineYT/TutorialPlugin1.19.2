@@ -10,3 +10,17 @@ commands:
     usage: /nearestplayer
     permission: tutorialplugin.np
     description: '''Gets the nearest player to you!'''
+  distance:
+    aliases:
+      - d
+      - ds
+    usage: /distance
+    permission: tutorialplugin.ds
+    description: '''Gets the distance between two players!'''
+  tutorialplugin:
+    aliases:
+      - tutorialp
+      - tplugin
+    permission: tutorialplugin
+    usage: /tutorialplugin
+    description: '''Displays helpful information about the plugin!'''
