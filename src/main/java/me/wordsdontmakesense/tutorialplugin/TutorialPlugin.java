@@ -18,6 +18,9 @@ public final class TutorialPlugin extends JavaPlugin {
         getCommand("tutorialplugin").setExecutor(new TutorialPluginCommand());
         getCommand("nearestplayer").setExecutor(new NearestCommand());
         getCommand("distance").setExecutor(new DistanceCommand());
+
+        // Tab Complete
+        getCommand("tutorialplugin").setTabCompleter(new TutorialPluginCommand());
     }
 
     @Override
