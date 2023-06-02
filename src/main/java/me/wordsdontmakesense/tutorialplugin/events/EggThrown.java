@@ -10,10 +10,7 @@ public class EggThrown implements Listener {
     @EventHandler
     public void onEggThrown(PlayerEggThrowEvent event)
     {
-        if(event instanceof Chicken) {
-            event.setNumHatches((byte) 10);
-            event.setHatching(true);
-            event.setHatchingType(EntityType.CHICKEN);
-        }
+        event.setNumHatches((byte) 10);
+        event.setHatching(true);
     }
 }

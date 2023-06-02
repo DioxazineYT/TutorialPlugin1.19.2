@@ -4,12 +4,8 @@ import me.wordsdontmakesense.tutorialplugin.commands.DistanceCommand;
 import me.wordsdontmakesense.tutorialplugin.commands.NearestCommand;
 import me.wordsdontmakesense.tutorialplugin.commands.TutorialPluginCommand;
 import me.wordsdontmakesense.tutorialplugin.events.EggThrown;
-import me.wordsdontmakesense.tutorialplugin.events.MainHandChange;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Egg;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TutorialPlugin extends JavaPlugin implements Listener {
@@ -30,7 +26,6 @@ public final class TutorialPlugin extends JavaPlugin implements Listener {
 
         // Listeners
         getServer().getPluginManager().registerEvents(new EggThrown(), this);
-        getServer().getPluginManager().registerEvents(new MainHandChange(), this);
     }
 
     @Override
